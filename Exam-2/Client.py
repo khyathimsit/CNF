@@ -16,7 +16,7 @@ def main():
     sockobj = socket.socket()
     sockobj.connect((host, port))
 
-    threading.Thread(target=recvData, args=(sockobj,))
+    thread = threading.Thread(target=rec, args=(sockobj,))
     thread.start()
 
     while True:
